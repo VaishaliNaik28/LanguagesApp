@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title> Languages App By Vaishali Naik </title>
+	<style>
+		* {font-size:50px;}
+		body {background-color:#59CE72;}
+		.btn {width:30%;background-color:#075E54;}
+		input[type="checkbox"]{width:2%;height:0.5em;}
+		form{margin-top:50px;width:700px;height:600px;padding:20px;
+		box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+		backdrop-filter:blur(10px);
+		background:white;
+		display:block;
+		padding:8px;
+		}
+	</style>
+</head>
+<body>
+<center>
+	<form onsubmit="show()">
+		<h1> Languages You Know App </h1>
+		<input type="text" placeholder="enter your name" id="name" />
+		<br/><br/>
+		<input type="checkbox" id="js"/>Java Script
+		<input type="checkbox" id="ja"/>Java
+		<input type="checkbox" id="py"/>Python
+		<br/><br/>
+		<input type="submit" class="btn" />
+		<h2 style="font-size:40px" id="msg"/>
+	</form>
+	<script>
+		function show()
+		{
+		event.preventDefault();
+		let name = document.getElementById("name");
+		let js = document.getElementById("js");
+		let ja = document.getElementById("ja");
+		let py = document.getElementById("py");
+		let msg = document.getElementById("msg");
+
+		let choice = "";
+		if (js.checked)			choice += "Java Script ";
+		if(ja.checked)			choice += "Java ";
+		if(py.checked)			choice += "Python ";
+		
+		if (choice.length == 0)
+			choice = "then learn something";
+
+		let ans = "Name =" + name.value +"," + " " + "Choice =" + choice ;
+		msg.innerHTML = ans;
+		}
+	</script>
+</center>
+<span id="PING_IFRAME_FORM_DETECTION" style="display:none;"></span>
+</body>
+</html>
